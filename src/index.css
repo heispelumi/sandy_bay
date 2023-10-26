@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  :root {
+   --primary-light :#9ef01a ;
+   --primary-dark  : #006400  ;
+  }
+   .icons {
+    color:var(--primary-dark);
+   }
+ body{
+  overflow-x:hidden;
+ }
+
+ .caro{
+  width: 500px;
+  height: 500px;
+ }
+@media (max-width: 760px) {
+  .caro{
+    width: 200px;
+    height: 200px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  @layer base {
+    Link {
+      @apply p-4
+    }
+    h1 {
+      @apply text-3xl md:text-4xl font-bold
+    }
+    h2 {
+      @apply text-3xl 
+    }
+    button { 
+     @apply border p-3 rounded-md bg-gradient-to-r  from-[var(--primary-dark)] to-[var(--primary-light)] text-white
+    }
+     
+    .icons {
+      @apply text-3xl cursor-pointer 
+    }
+    .image{
+      @apply w-[400px] h-[400px]  md:w-[200px] md:h-[200px]
+      
+    }
+    .images{
+      @apply w-[300px] h-[300px] md:w-[300px] md:h-[300px]
+    }
+
+    .caro{
+       @apply w-[300px] h-[300px]
+    }
+  }
